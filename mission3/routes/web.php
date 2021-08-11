@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'TaskController@index')->name('tasks.index');
+Route::resource('/tasks', 'TaskController')->except(['index']);
