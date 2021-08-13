@@ -35,8 +35,9 @@ class TaskController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TaskRequest $request,Task $task)
+    public function store(TaskRequest $request)
     {
+        $task = new Task;
         $task->fill($request->all());
         $task->comment = $request->comment;
         $task->status = $request->button_status;
