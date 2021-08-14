@@ -26,7 +26,7 @@
                 <th>{{ $task->comment }}</th>
                 <th>
                     <button>{{ $task->status }}</button>
-                    <form method="POST" action="{{ route('tasks.destroy',['task' => $task]) }}" >
+                    <form method="POST" action="{{ route('tasks.destroy',$task->id) }}" >
                         @csrf
                         @method('DELETE')
                         <button>削除</button>
