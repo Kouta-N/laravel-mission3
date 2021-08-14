@@ -26,10 +26,11 @@
                 <th>{{ $task->comment }}</th>
                 <th>
                     <button>{{ $task->status }}</button>
-                    {{-- <form method="POST" action="{{ route('tasks.destroy') }}" >
-                        @csrf --}}
+                    <form method="POST" action="{{ route('tasks.destroy',['task' => $task]) }}" >
+                        @csrf
+                        @method('DELETE')
                         <button>削除</button>
-                    {{-- </form> --}}
+                    </form>
                 </th>
             </tr>
         @endforeach
